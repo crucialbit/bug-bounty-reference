@@ -4,33 +4,32 @@ A list of bug bounty write-up that is categorized by the bug nature, this is ins
 
 # Introduction
 
-Follow my Twitter @ngalongc
 I have been reading for Bug Bounty write-ups for a few months, I found it extremely useful to read relevant write-up when I found a certain type of vulnerability tha I have no idea how to exploit. Let say you found a RPO (Relativce Path Overwrite) in a website, but you have no idea how should you exploit that, then the perfect place to go would be [here](http://blog.innerht.ml/rpo-gadgets/). Or you have found your customer is using oauth mechanism but you have no idea how should we test it, the other perfect place to go would be [here](https://whitton.io/articles/obtaining-tokens-outlook-office-azure-account/)
 
 My intention is to make a full and complete list of common vulnerability that are publicly disclosed bug bounty write-up, and let Bug Bounty Hunter to use this page as a reference when they want to gain some insight for a particular kind of vulnerability during Bug Hunting, feel free to submit pull request. Okay, enough for chit-chatting, let's get started. 
 
 
-- [Author's Write Up](https://github.com/ngalongc/bug-bounty-reference#author-write-up)
-- [XSSI](https://github.com/ngalongc/bug-bounty-reference#xssi)
-- [Cross-Site Scripting (XSS)](https://github.com/ngalongc/bug-bounty-reference#cross-site-scripting-xss)
-- [Brute Force](https://github.com/ngalongc/bug-bounty-reference/blob/master/README.md#brute-force)
-- [SQL Injection (SQLi)](https://github.com/ngalongc/bug-bounty-reference#sql-injection)
-- [External XML Entity Attack (XXE)](https://github.com/ngalongc/bug-bounty-reference#xxe)
-- [Remote Code Execution (RCE)](https://github.com/ngalongc/bug-bounty-reference#remote-code-execution)
-  - [Deserialization](https://github.com/ngalongc/bug-bounty-reference#deserialization)
-  - [Image Tragick](https://github.com/ngalongc/bug-bounty-reference#image-tragick)
-- [Cross-Site Request Forgery (CSRF)](https://github.com/ngalongc/bug-bounty-reference#csrf)
-- [Insecure Direct Object Reference (IDOR)](https://github.com/ngalongc/bug-bounty-reference#insecure-direct-object-reference-idor)
-- [Stealing Access Token](https://github.com/ngalongc/bug-bounty-reference#stealing-access-token)
-  - [Google Oauth Login Bypass](https://github.com/ngalongc/bug-bounty-reference#google-oauth-bypass)
-- [Server Side Request Forgery (SSRF)](https://github.com/ngalongc/bug-bounty-reference#server-side-request-forgery-ssrf)
-- [Unrestricted File Upload](https://github.com/ngalongc/bug-bounty-reference#unrestricted-file-upload)
-- [Race Condition](https://github.com/ngalongc/bug-bounty-reference#race-condition)
-- [Business Logic Flaw](https://github.com/ngalongc/bug-bounty-reference#race-condition#business-logic-flaw)
-- [Authentication Bypass](https://github.com/ngalongc/bug-bounty-reference#race-condition#business-logic-flaw#authentication-bypass)
-- [HTTP Header Injection](https://github.com/ngalongc/bug-bounty-reference#http-header-injection)
-- [Email Related](https://github.com/ngalongc/bug-bounty-reference#email-related)
-- Money Stealing
+- [XSSI](#xssi)
+- [Cross-Site Scripting (XSS)](#cross-site-scripting-xss)
+- [Brute Force](#brute-force)
+- [SQL Injection (SQLi)](#sql-injection)
+- [External XML Entity Attack (XXE)](#xxe)
+- [Remote Code Execution (RCE)](#remote-code-execution)
+  - [Deserialization](#deserialization)
+  - [Image Tragick](#image-tragick)
+- [Cross-Site Request Forgery (CSRF)](#csrf)
+- [Insecure Direct Object Reference (IDOR)](#insecure-direct-object-reference-idor)
+- [Stealing Access Token](#stealing-access-token)
+  - [Google Oauth Login Bypass](#google-oauth-bypass)
+- [Server Side Request Forgery (SSRF)](#server-side-request-forgery-ssrf)
+- [Unrestricted File Upload](#unrestricted-file-upload)
+- [Race Condition](#race-condition)
+- [Business Logic Flaw](#business-logic-flaw)
+- [Authentication Bypass](#authentication-bypass)
+- [HTTP Header Injection](#http-header-injection)
+- [Email Related](#email-related)
+- [Money Stealing](#money-stealing)
+- [Miscellaneous](#miscellaneous)
 
 ### Cross-Site Scripting (XSS)
 
@@ -72,8 +71,9 @@ My intention is to make a full and complete list of common vulnerability that ar
 - [Airbnb – When Bypassing JSON Encoding, XSS Filter, WAF, CSP, and Auditor turns into Eight Vulnerabilities](https://buer.haus/2017/03/08/airbnb-when-bypassing-json-encoding-xss-filter-waf-csp-and-auditor-turns-into-eight-vulnerabilities/) by Brett 
 - [XSSI, Client Side Brute Force](http://blog.intothesymmetry.com/2017/05/cross-origin-brute-forcing-of-saml-and.html)  
 - [postMessage XSS Bypass](https://hackerone.com/reports/231053)
-- [Login.yahoolcom XSS](http://samcurry.net/understanding-the-logic-behind-broken-html-editors-achieving-stored-xss-on-login-yahoo-com/)
-
+- [XSS in Uber via Cookie](http://zhchbin.github.io/2017/08/30/Uber-XSS-via-Cookie/) by zhchbin
+- [Stealing contact form data on www.hackerone.com using Marketo Forms XSS with postMessage frame-jumping and jQuery-JSONP](https://hackerone.com/reports/207042) by frans
+- [XSS due to improper regex in third party js Uber 7k XSS](http://zhchbin.github.io/2016/09/10/A-Valuable-XSS/) 
 
 
 ### Brute Force
@@ -130,6 +130,7 @@ My intention is to make a full and complete list of common vulnerability that ar
 - [JDWP Remote Code Execution in PayPal](https://www.vulnerability-lab.com/get_content.php?id=1474) by Milan A Solanki
 - [XXE in OpenID: one bug to rule them all, or how I found a Remote Code Execution flaw affecting Facebook's servers](http://www.ubercomp.com/posts/2014-01-16_facebook_remote_code_execution) by Reginaldo Silva
 - [How I Hacked Facebook, and Found Someone's Backdoor Script](http://devco.re/blog/2016/04/21/how-I-hacked-facebook-and-found-someones-backdoor-script-eng-ver/) by Orange Tsai
+- [How I Chained 4 vulnerabilities on GitHub Enterprise, From SSRF Execution Chain to RCE!](http://blog.orange.tw/2017/07/how-i-chained-4-vulnerabilities-on.html) by Orange Tsai
 - [uber.com may RCE by Flask Jinja2 Template Injection](https://hackerone.com/reports/125980) by Orange Tsai
 - [Yahoo Bug Bounty - *.login.yahoo.com Remote Code Execution](http://blog.orange.tw/2013/11/yahoo-bug-bounty-part-2-loginyahoocom.html) by Orange Tsai (Sorry its in Chinese Only)
 - [How we broke PHP, hacked Pornhub and earned $20,000](https://www.evonide.com/how-we-broke-php-hacked-pornhub-and-earned-20000-dollar/) by Ruslan Habalov
@@ -146,11 +147,13 @@ My intention is to make a full and complete list of common vulnerability that ar
 - [Command Injection Vulnerability in Hostinger](http://elladodelnovato.blogspot.hk/2017/02/command-injection-vulnerability-in.html?spref=tw&m=1) by @alberto__segura
 - [RCE in Airbnb by Ruby Injection](http://buer.haus/2017/03/13/airbnb-ruby-on-rails-string-interpolation-led-to-remote-code-execution/) by buerRCE
 - [RCE in Imgur by Command Line](https://hackerone.com/reports/212696)
-- [RCE in git.imgur.com by abusing out dated software](https://hackerone.com/reports/206227)
+- [RCE in git.imgur.com by abusing out dated software](https://hackerone.com/reports/206227) by Orange Tsai
 - [RCE in Disclosure](https://hackerone.com/reports/213558)
 - [Remote Code Execution by struct2 Yahoo Server](https://medium.com/@th3g3nt3l/how-i-got-5500-from-yahoo-for-rce-92fffb7145e6)
 - [Command Injection in Yahoo Acquisition](http://samcurry.net/how-i-couldve-taken-over-the-production-server-of-a-yahoo-acquisition-through-command-injection/)
 - [Paypal RCE](http://blog.pentestbegins.com/2017/07/21/hacking-into-paypal-server-remote-code-execution-2017/)
+- [$50k RCE in JetBrains IDE](http://blog.saynotolinux.com/blog/2016/08/15/jetbrains-ide-remote-code-execution-and-local-file-disclosure-vulnerability-analysis/)
+- [$20k RCE in Jenkin Instance](http://nahamsec.com/secure-your-jenkins-instance-or-hackers-will-force-you-to/) by @nahamsec
 
 
 ####  Deserialization
@@ -247,11 +250,14 @@ Credit Cards from Any Twitter Account](https://www.secgeek.net/twitter-vulnerabi
 - [SAML Bug in Github worth 15000](http://www.economyofmechanism.com/github-saml.html)  
 - [Authentication bypass on Airbnb via OAuth tokens theft](https://www.arneswinnen.net/2017/06/authentication-bypass-on-airbnb-via-oauth-tokens-theft/)
 - [Uber Login CSRF + Open Redirect -> Account Takeover at Uber](http://ngailong.com/uber-login-csrf-open-redirect-account-takeover/)
+- [http://c0rni3sm.blogspot.hk/2017/08/accidentally-typo-to-bypass.html?m=1](Administrative Panel Access) by c0rni3sm
+- [Uber Bug Bounty: Gaining Access To An Internal Chat System](http://blog.mish.re/index.php/2017/09/06/uber-bug-bounty-gaining-access-to-an-internal-chat-system/) by mishre
 
 ### HTTP Header Injection
 - [Twitter Overflow Trilogy in Twitter](https://blog.innerht.ml/overflow-trilogy/) by filedescriptor
 - [Twitter CRLF](https://blog.innerht.ml/twitter-crlf-injection/) by filedescriptor
 - [Adblock Plus and (a little) more in Google](https://adblockplus.org/blog/finding-security-issues-in-a-website-or-how-to-get-paid-by-google)
+- [$10k host header](https://sites.google.com/site/testsitehacking/10k-host-header) by Ezequiel Pereira
 
 ### Subdomain Takeover
 
@@ -281,12 +287,14 @@ Credit Cards from Any Twitter Account](https://www.secgeek.net/twitter-vulnerabi
 - [I got emails - G Suite Vulnerability](http://blog.pentestnepal.tech/post/156707088037/i-got-emails-g-suite-vulnerability)
 - [How I snooped into your private Slack messages [Slack Bug bounty worth $2,500]](http://blog.pentestnepal.tech/post/150381068912/how-i-snooped-into-your-private-slack-messages)
 - [Reading Uber’s Internal Emails [Uber Bug Bounty report worth $10,000]](http://blog.pentestnepal.tech/post/149985438982/reading-ubers-internal-emails-uber-bug-bounty)
+- [Slack Yammer Takeover by using TicketTrick](https://medium.com/@intideceukelaire/how-i-hacked-hundreds-of-companies-through-their-helpdesk-b7680ddc2d4c) by Inti De Ceukelaire
 
 ## Money Stealing
 
 - [Round error issue -> produce money for free in Bitcoin Site](https://hackerone.com/reports/176461) by 4lemon
 
 ## 2017 Local File Inclusion
+
 - [Disclosure Local File Inclusion by Symlink](https://hackerone.com/reports/213558)
 - [Facebook Symlink Local File Inclusion](http://josipfranjkovic.blogspot.hk/2014/12/reading-local-files-from-facebooks.html)
 - [Gitlab Symlink Local File Inclusion](https://hackerone.com/reports/158330)
@@ -294,8 +302,7 @@ Credit Cards from Any Twitter Account](https://www.secgeek.net/twitter-vulnerabi
 - [Multiple Company LFI](http://panchocosil.blogspot.sg/2017/05/one-cloud-based-local-file-inclusion.html)
 - [LFI by video conversion, excited about this trick!](https://hackerone.com/reports/226756)
 
-## No Category
-
+## Miscellaneous
 
 - [SAML Pen Test Good Paper](http://research.aurainfosec.io/bypassing-saml20-SSO/)
 - [A list of FB writeup collected by phwd](https://www.facebook.com/notes/phwd/facebook-bug-bounties/707217202701640) by phwd
@@ -317,3 +324,6 @@ Credit Cards from Any Twitter Account](https://www.secgeek.net/twitter-vulnerabi
 - [Payment Issue with Paypal](https://hackerone.com/reports/219215)
 - [Browser Exploitation in Chinese](http://paper.seebug.org/)
 - [XSS bypass filter](https://t.co/0Kpzo52ycb)
+- [Markup Impropose Sanitization](https://github.com/ChALkeR/notes/blob/master/Improper-markup-sanitization.md)
+- [Breaking XSS mitigations via Script Gadget](https://www.blackhat.com/docs/us-17/thursday/us-17-Lekies-Dont-Trust-The-DOM-Bypassing-XSS-Mitigations-Via-Script-Gadgets.pdf)
+- [X41 Browser Security White Paper](https://browser-security.x41-dsec.de/X41-Browser-Security-White-Paper.pdf)
